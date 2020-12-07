@@ -1,0 +1,60 @@
+<div class="container">
+  <!-- Login Functionality -->
+  <mat-card class="login-card margin-container">
+    <form [formGroup]="loginForm" (ngSubmit)="loginHandler()">
+      <p class="center light-blue font-size">Login</p>
+      <br />
+      <br />
+      <br />
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label for="UserName">&nbsp;&nbsp;UserName</mat-label>
+        <input
+          (change)="inputChange($event)"
+          matInput
+          type="email"
+          class="input-box"
+          color="warn"
+          name="userName"
+          id="userName"
+          formControlName="userName"
+          required
+        />
+        <mat-icon matPrefix class="icon-color-change">account_circle</mat-icon>
+        <mat-error *ngIf="loginForm.get('userName').hasError('required')">
+          Please give us your UserName to Authenticate!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label for="password">&nbsp;&nbsp;Password</mat-label>
+        <input
+          (change)="inputChange($event)"
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          class="input-box"
+          name="password"
+          id="password"
+          formControlName="password"
+          required
+        />
+        <mat-icon matPrefix class="icon-color-change">lock</mat-icon>
+        <mat-icon matSuffix (click)="hide = !hide" class="icon-color-change">{{
+          hide ? "visibility_off" : "visibility"
+        }}</mat-icon>
+        <mat-error *ngIf="loginForm.get('password').hasError('required')"
+          >Please enter Your Password for secure login</mat-error
+        >
+      </mat-form-field>
+      <br />
+      <!-- <mat-checkbox><span class="Rememberme">Remember me</span></mat-checkbox> <a style="cursor:pointer" (click)=forgotPassword() class="forgot-password">Forgot Password?</a> -->
+      <button
+        autofocus
+        mat-raised-button
+        class="block-button"
+        [disabled]="!loginForm.valid"
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+  </mat-card>
+</div>

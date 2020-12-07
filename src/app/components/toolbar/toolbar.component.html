@@ -1,0 +1,17 @@
+<div>
+  <mat-toolbar
+    class="app-toolbar no-print mat-toolbar mat-primary mat-toolbar-multiple-rows custom-toolbar"
+  >
+    <div style="display: flex; justify-content: space-between; width: 100%">
+      <span class="mat-button-wrapper toolbar-logo">
+        {{ heading }}
+      </span>
+      <span
+        (click)="logoutHandler()"
+        style="position: relative; top: 3px"
+        class="right"
+        ><mat-icon>power_settings_new</mat-icon></span
+      >
+    </div>
+  </mat-toolbar>
+</div>
