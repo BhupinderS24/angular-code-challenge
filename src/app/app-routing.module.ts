@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthService } from './common/guard/auth.service';
+
 const routes: Routes = [
   {
     path: '',
@@ -22,8 +23,6 @@ const routes: Routes = [
     component: LoginComponent,
   },
 ];
-
-// ng generate module orders --route orders --module app.module   ---- To generate new module
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

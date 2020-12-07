@@ -7,14 +7,12 @@ import { environment } from '../../../environments/environment';
 })
 export class NetworkCallsService {
   url = environment.apiUrl;
+  apiKey = environment.apiKey;
   constructor(private http: HttpClient) {}
 
   getTrendingTickers() {
     let headers = new HttpHeaders();
-    headers = headers.append(
-      'x-rapidapi-key',
-      '628cf69045msh1fff05347783c87p1e7776jsn2f15fcc5d10d'
-    );
+    headers = headers.append('x-rapidapi-key', this.apiKey);
     headers = headers.append(
       'x-rapidapi-host',
       'apidojo-yahoo-finance-v1.p.rapidapi.com'
@@ -27,9 +25,5 @@ export class NetworkCallsService {
       headers,
       params,
     });
-  }
-
-  postData(task: any) {
-    return this.http.post(`${this.url}/rerun`, task);
   }
 }

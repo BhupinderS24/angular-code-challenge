@@ -37,8 +37,6 @@ export class LoginComponent implements OnInit {
   }
 
   loginHandler() {
-    this.spinner.show();
-
     let username = this.loginForm.controls.userName.value;
     let password = this.loginForm.controls.password.value;
 

@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
+##Pages -
+
+#Login - User can Login with username and password (mentioned in environment file). On success It will redirect to Dashboard Page . Login state will be saved in local storage on success . 
+#Dashboard - In dashboard there will be table showing details of trending stocks with filter feature . In toolbar there is logout icon by which user can logout . It will redirect to the Login Page .
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
